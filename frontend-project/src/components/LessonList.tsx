@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchLessons } from '../services/api';
 
+
 const LessonList: React.FC = () => {
-  const [lessons, setLessons] = useState<any[]>([]);
+  const [lessons, setLessons] = useState<{ id: number; titolo: string }[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -10,9 +11,17 @@ const LessonList: React.FC = () => {
     const getLessons = async () => {
       try {
         const data = await fetchLessons();
-        setLessons(data);
-      } catch (err) {
-        setError('Failed to fetch lessons');
+        if (Array.isArray(data)) {
+          setLessons(data);
+        } else {
+          setLessons([]);
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError('An unknown error occurred');
+        }
       } finally {
         setLoading(false);
       }
