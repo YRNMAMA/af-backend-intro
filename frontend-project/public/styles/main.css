@@ -21,7 +21,42 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
+h1 {
+    color: #35424a;
+}
+h2 {
+    color: #35424a;
+}
+h3 {
+    color: #35424a;
+}
+h4 {
+    color: #35424a;
+}
+h5 {
+    color: #35424a;
+}
+h6 {
+    color: #35424a;
+}
+p {
+    color: #333;
+}
+a {
+    color: #35424a;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+button {
+    background: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 .lesson-list {
     margin: 20px;
     padding: 20px;
