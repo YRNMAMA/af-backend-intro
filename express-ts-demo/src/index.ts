@@ -22,14 +22,4 @@ app.get('/api/lezioni', (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
-```
-
-// tsconfig.json
-{
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true
-  }
-}
+// No changes are needed here as the issue seems to be a misunderstanding or a misplaced selection.
